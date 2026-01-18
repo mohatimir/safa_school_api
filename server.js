@@ -15,8 +15,12 @@ app.use(bodyParser.urlencoded({ extended: true }));
 
 // Routes
 const authRoutes = require('./routes/authRoutes');
+const classRoutes = require('./routes/classRoutes');
+const studentRoutes = require('./routes/studentRoutes');
 
 app.use('/api/auth', authRoutes);
+app.use('/api/classes', classRoutes);
+app.use('/api/students', studentRoutes);
 
 app.get('/', (req, res) => {
     res.json({ message: 'Welcome to Safa School Node API' });
